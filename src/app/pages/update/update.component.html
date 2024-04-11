@@ -1,0 +1,54 @@
+<mat-card class="example-card">
+  <!-- Encabezado del card -->
+  <mat-card-header style="padding: 45px 16px 0;">
+    <mat-card-title>Editar persona</mat-card-title>
+    <mat-card-subtitle>
+      <!-- Aquí puedes agregar algún otro contenido en el encabezado -->
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- Contenido del card -->
+  <mat-card-content style="padding-top: 3%;">
+    <!-- Formulario de edición -->
+    <form class="example-form">
+      <!-- Campo de nombres -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombres</mat-label>
+        <input matInput [(ngModel)]="nombres" placeholder="Nombres" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+      <!-- Campo de apellido paterno -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido Paterno</mat-label>
+        <input matInput [(ngModel)]="paterno" placeholder="Apellido Paterno" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+      <!-- Campo de apellido materno -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido Materno</mat-label>
+        <input matInput [(ngModel)]="materno" placeholder="Apellido Materno" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+      <!-- Campo de número de documento -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Numero de Documento</mat-label>
+        <input matInput [(ngModel)]="numdocumento" placeholder="Numero de Documento" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+      <!-- Campo de dirección -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Direccion</mat-label>
+        <input matInput [(ngModel)]="direccion" placeholder="Direccion" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+
+      <!-- Campo de teléfono -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Telefono</mat-label>
+        <input matInput [(ngModel)]="telefono" placeholder="Telefono" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    </form>
+
+    <!-- Botón de guardar -->
+    <button mat-flat-button color="primary" (click)="guardar()">Guardar</button>
+  </mat-card-content>
+</mat-card>

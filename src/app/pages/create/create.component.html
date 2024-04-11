@@ -1,0 +1,52 @@
+<mat-card class="example-card">
+  <!-- Encabezado de la tarjeta -->
+  <mat-card-header style="padding: 45px 16px 0;">
+    <!-- Título de la tarjeta -->
+    <mat-card-title>Crear nueva persona</mat-card-title>
+    <!-- Subtítulo de la tarjeta (opcional) -->
+    <mat-card-subtitle>
+
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- Contenido de la tarjeta -->
+  <mat-card-content style="padding-top: 3%;">
+    <!-- Formulario -->
+    <form class="example-form">
+      <!-- Campo para ingresar los nombres -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombres</mat-label>
+        <input matInput [(ngModel)]="nombres" placeholder="Nombres" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <!-- Campo para ingresar el apellido paterno -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido Paterno</mat-label>
+        <input matInput [(ngModel)]="paterno" placeholder="Apellido Paterno" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <!-- Campo para ingresar el apellido materno -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Apellido Materno</mat-label>
+        <input matInput [(ngModel)]="materno" placeholder="Apellido Materno" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <!-- Campo para ingresar el número de documento -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Número de Documento</mat-label>
+        <input matInput [(ngModel)]="numdocumento" placeholder="Número de Documento" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <!-- Campo para ingresar la dirección -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Dirección</mat-label>
+        <input matInput [(ngModel)]="direccion" placeholder="Dirección" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <!-- Campo para ingresar el teléfono -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Teléfono</mat-label>
+        <input matInput [(ngModel)]="telefono" placeholder="Teléfono" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+    </form>
+
+    <!-- Botón para crear la nueva persona -->
+    <button mat-flat-button color="primary" (click)="crear()">Crear</button>
+
+  </mat-card-content>
+</mat-card>

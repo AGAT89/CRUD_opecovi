@@ -1,0 +1,89 @@
+<mat-card class="example-card">
+  <!-- Encabezado del card -->
+  <mat-card-header style="padding: 45px 16px 0;">
+    <mat-card-title style="color:white">Listado Personas Opecovi</mat-card-title>
+    <mat-card-subtitle>
+      <!-- Botón de "Nuevo Registro" -->
+      <button mat-flat-button color="primary" (click)="nuevo()">Nuevo Registro</button>
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- Contenido del card -->
+  <mat-card-content style="padding-top: 3%;">
+    <div class="mat-elevation-z8">
+      <!-- Tabla de personas -->
+      <table mat-table [dataSource]="personas">
+        <!-- Columna de ID de registro -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>ID.</th>
+          <td mat-cell *matCellDef="let element">{{element.idPersona}}</td>
+        </ng-container>
+
+        <!-- Columna de Apellido Paterno -->
+        <ng-container matColumnDef="paterno">
+          <th mat-header-cell *matHeaderCellDef>Apellido Paterno</th>
+          <td mat-cell *matCellDef="let element">{{element.apellidoPaterno}}</td>
+        </ng-container>
+
+        <!-- Columna de Apellido Materno -->
+        <ng-container matColumnDef="materno">
+          <th mat-header-cell *matHeaderCellDef>Apellido Materno</th>
+          <td mat-cell *matCellDef="let element">{{element.apellidoMaterno}}</td>
+        </ng-container>
+
+        <!-- Columna de Nombres -->
+        <ng-container matColumnDef="nombres">
+          <th mat-header-cell *matHeaderCellDef>Nombres</th>
+          <td mat-cell *matCellDef="let element">{{element.nombres}}</td>
+        </ng-container>
+
+        <!-- Columna de Número de Documento -->
+        <ng-container matColumnDef="documentoIdentidad">
+          <th mat-header-cell *matHeaderCellDef>Numero Documento</th>
+          <td mat-cell *matCellDef="let element">{{element.documentoIdentidad}}</td>
+        </ng-container>
+
+        <!-- Columna de Dirección -->
+        <ng-container matColumnDef="direccion">
+          <th mat-header-cell *matHeaderCellDef>Dirección</th>
+          <td mat-cell *matCellDef="let element">{{element.direccion}}</td>
+        </ng-container>
+
+        <!-- Columna de Empleado -->
+        <ng-container matColumnDef="esEmpleado">
+          <th mat-header-cell *matHeaderCellDef>Empleado</th>
+          <td mat-cell *matCellDef="let element">{{element.esEmpleado == 1 ? 'Si' : 'No'}}</td>
+        </ng-container>
+
+        <!-- Columna de Proveedor -->
+        <ng-container matColumnDef="esProveedor">
+          <th mat-header-cell *matHeaderCellDef>Proveedor</th>
+          <td mat-cell *matCellDef="let element">{{element.esProveedor == 1 ? 'Si' : 'No'}}</td>
+        </ng-container>
+
+        <!-- Columna de Acciones -->
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td mat-cell *matCellDef="let element">
+            <!-- Botón de Editar -->
+            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="actualizar(element.idPersona)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <!-- Botón de Eliminar -->
+            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="eliminar(element.idPersona)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <!-- Definición de filas de la tabla -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <!-- Paginador de la tabla -->
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>
